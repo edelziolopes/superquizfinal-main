@@ -35,7 +35,7 @@ class Perguntas
     public static function sistemas($id_categoria)
     {
         $conn = new Database();
-        $sql = 'SELECT 
+        $result = $conn->executeQuery('SELECT 
                     p.pergunta AS Pergunta,
                     r.alternativa_a AS RespA,
                     r.alternativa_b AS RespB,
@@ -47,10 +47,10 @@ class Perguntas
                 JOIN 
                     tb_resposta AS r ON p.id = r.id_pergunta
                 WHERE 
-                    p.id_categoria = ?;';
-
-        $params = [$id_categoria];
-        $result = $conn->executeQuery($sql, $params);
+                    p.id_categoria = :ID_CATEGORIA;', 
+      array(
+        ':ID_CATEGORIA' => $id_categoria)
+      ); 
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }  
 

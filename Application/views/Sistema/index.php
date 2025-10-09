@@ -1,53 +1,9 @@
-<?php
-$data = [
-    'perguntas' => [
-        [
-            'Pergunta' => 'Qual tag HTML é usada para criar um hyperlink?',
-            'RespA' => '<a>',
-            'RespB' => '<link>',
-            'RespC' => '<href>',
-            'RespD' => '<p>',
-            'Correta' => 'A' // Resposta correta
-        ],
-        [
-            'Pergunta' => 'Qual propriedade CSS é usada para alterar a cor do texto de um elemento?',
-            'RespA' => 'font-color',
-            'RespB' => 'text-color',
-            'RespC' => 'color',
-            'RespD' => 'background-color',
-            'Correta' => 'C' // Resposta correta
-        ],
-        [
-            'Pergunta' => 'O que significa a sigla "PHP"?',
-            'RespA' => 'Personal Home Page',
-            'RespB' => 'PHP: Hypertext Preprocessor',
-            'RespC' => 'Private Hosting Platform',
-            'RespD' => 'Program Hyperlink Protocol',
-            'Correta' => 'B' // Resposta correta
-        ],
-        [
-            'Pergunta' => 'Qual dos seguintes não é um framework JavaScript?',
-            'RespA' => 'React',
-            'RespB' => 'Angular',
-            'RespC' => 'Vue',
-            'RespD' => 'Laravel',
-            'Correta' => 'D' // Resposta correta
-        ]
-    ]
-];
-?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizz Interativo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Estilo para a animação de fade-in/out */
         .quiz-question {
             transition: opacity 0.5s ease-in-out;
         }
     </style>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
     <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-3xl">
 
