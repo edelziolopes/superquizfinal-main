@@ -1,88 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8">
-    <title>Simple Framework</title>
-    <?php if (($_SERVER['REQUEST_URI'] === '/home') || ($_SERVER['REQUEST_URI'] === '/')): ?>
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="stylesheet" href="/assets/css/home.css">
-    <?php else: ?>
-      <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-      <link rel="stylesheet" href="/assets/css/style.css">
-    <?php endif; ?>
-  </head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERQUIZZ - Início</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados e animações para evitar modificar classes globais */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
 
-<?php if (($_SERVER['REQUEST_URI'] === '/ranking')) ?>
-      <script src="https://cdn.tailwindcss.com"></script>
+        /* Animação de flutuação para o logo */
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-25px);
+            }
+        }
 
-<body class="bg-custom-gradient text-white h-screen flex flex-col">
+        .logo-animation {
+            animation: floatAnimation 5s ease-in-out infinite;
+        }
 
-  <?php if (($_SERVER['REQUEST_URI'] === '/home') || ($_SERVER['REQUEST_URI'] === '/')): ?>
-  <!-- Tailwind -->
-  <?php else: ?>
-
- 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/sorteio">Sorteio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/home">home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/categoria">Categoria</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pergunta">Pergunta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/usuario">Usuario</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/resposta">Resposta</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/usuario/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/usuario/cadastro">Regra</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    <?php endif; ?>
+        /* Estilo para o logo com gradiente */
+        .logo-gradient {
+            background: linear-gradient(45deg, #FBBF24, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
 
 
   <?php
     require '../Application/autoload.php';
     use Application\core\App;
     use Application\core\Controller;
-
     $app = new App();
-
   ?>
-  <?php if (($_SERVER['REQUEST_URI'] === '/home') || ($_SERVER['REQUEST_URI'] === '/')): ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('menu-button');
-            const closeMenuButton = document.getElementById('close-menu');
-            const mobileMenu = document.getElementById('mobile-menu');
-OiOi . 
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-            });
-
-            closeMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
-  <?php else: ?>
-    <script src="/assets/js/jquery.slim.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/ranking.js"></script>
-  <?php endif; ?>
-  </body>
+</body>
 </html>
