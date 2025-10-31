@@ -1,0 +1,68 @@
+
+/* Reset básico para o HTML e BODY */
+html {
+    /* Garante que o html tenha no mínimo 100% da altura da tela */
+    min-height: 100vh; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Fundo Gradiente */
+    background: linear-gradient(135deg, #1f2937, #3b82f6);
+    
+    /* Centralização usando Flexbox */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    flex-direction: column;  /* Permite que o conteúdo seja empilhado verticalmente */
+    
+    /* Garante que o body ocupe a altura mínima e permita a rolagem */
+    min-height: 400vh;
+    width: 100%;
+    
+    /* Cor de Texto Padrão */
+    color: white; 
+    
+    /* 🔑 ESSENCIAL PARA O MENU FIXO INFERIOR: Adiciona um padding no fundo 
+       para que o conteúdo não fique escondido atrás do menu fixo de 80px */
+    padding-bottom: 80px; 
+}
+
+/* Corrigindo a cor dos inputs e labels dentro do card para o estilo translúcido */
+.input-field input, .input-field label {
+    color: white; /* Cor padrão para inputs e labels */
+}
+
+/* Estilo do Menu de Navegação Fixo */
+.fixed-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Estilo de fundo do menu, similar aos cards */
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    height: 70px; /* Altura do menu */
+}
+
+/* Estilo para os links do menu */
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.2s;
+}
+.nav-link:hover {
+    color: white;
+}
+.nav-link svg {
+    margin-bottom: 2px;
+}

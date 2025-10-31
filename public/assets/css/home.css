@@ -1,0 +1,27 @@
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: auto; /* Permite barra de rolagem apenas quando necessário */
+        }
+        .bg-custom-gradient {
+            background: linear-gradient(135deg, #1A237E, #311B92);
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        .pulse-once {
+            animation: pulse-once 1s ease-in-out forwards;
+        }
+        @keyframes pulse-once {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
